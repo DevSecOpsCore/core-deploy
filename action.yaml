@@ -14,6 +14,6 @@ runs:
   steps:
     - name: Repository Files are downloading
       uses: actions/checkout@v2
-    - run : python ${{ github.action_path }}/main.py  -kc ${{ inputs.KUBECONFIG }}
+    - run : python ${{ github.action_path }}/main.py  --kubeConfig ${{ inputs.KUBECONFIG }}
       shell: bash
 
