@@ -1,0 +1,19 @@
+name: 'Kubernetes Cluster Deploy '
+description: 'test '
+inputs:
+  KUBECONFIG:  # kubeconfig
+    description: 'Cluster Kubeconfig File'
+    required: false
+    default: 'default'
+outputs:
+  Result:
+    description: "Deploy  step results"
+    value: "Build steps  finished"
+runs:
+  using: "composite"
+  steps:
+    - name: Repository Files are downloading
+      uses: actions/checkout@v2
+    - run : python ${{ github.action_path }}/main.py  -kc ${{ inputs.KUBECONFIG }}
+      shell: bash
+
