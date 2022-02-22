@@ -5,5 +5,5 @@ from Library.Classes.parseDeployData import parseDeployData
 parseDeployData.splitSysParams()
 
 
-deployImageCluster.setKubeConfigFile()
+#deployImageCluster.setKubeConfigFile()
 
