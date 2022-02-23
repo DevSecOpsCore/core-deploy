@@ -22,7 +22,6 @@ runs:
   steps:
     - name: Repository Files are downloading
       uses: actions/checkout@v2
-    - name: echo kubeconfig input
     - run : python ${{ github.action_path }}/main.py --kubeConfig "${{inputs.KUBECONFIG}}" -dp ${{inputs.dPath}} -dn ${{inputs.dName}}
       shell: bash
 
