@@ -17,6 +17,6 @@ runs:
     - name: echo kubeconfig input
       run: echo "${{inputs.KUBECONFIG}}"
       shell: bash
-    - run : python ${{ github.action_path }}/main.py --kubeConfig ${{inputs.KUBECONFIG}}
+    - run : python ${{ github.action_path }}/main.py --kubeConfig "${{inputs.KUBECONFIG}}"
       shell: bash
 
