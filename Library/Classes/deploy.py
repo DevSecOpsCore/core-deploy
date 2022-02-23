@@ -15,6 +15,10 @@ class deployImageCluster:
         print(lsyap)
         lsA = subprocess.check_output("ls -A /home/runner/ ", shell=True)
         print(lsA)
+        catKubeconfig = subprocess.check_output('cat ' + parseDeployData.commandParameters['kubeConfig'] + ' > /home/runner/.kube/config', shell=True)
+        print(catKubeconfig)
+        lsAC = subprocess.check_output("ls -A /home/runner/.kube/ ", shell=True)
+        print(lsAC)
   # - name: mkdir .kube directory
   #     run : mkdir /home/runner/.kube
   #   - name : echo secret
