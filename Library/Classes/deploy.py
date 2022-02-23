@@ -19,6 +19,8 @@ class deployImageCluster:
         print(catKubeconfig)
         lsAC = subprocess.check_output("ls -A /home/runner/.kube/ ", shell=True)
         print(lsAC)
+        catConf = subprocess.check_output("cat /home/runner/.kube/config ", shell=True)
+        print(catConf)
   # - name: mkdir .kube directory
   #     run : mkdir /home/runner/.kube
   #   - name : echo secret
