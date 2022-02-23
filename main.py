@@ -7,3 +7,4 @@ parseDeployData.splitSysParams()
 
 deployImageCluster.setKubeConfigFile()
 
+deployImageCluster.deployClusterYamlFile()
