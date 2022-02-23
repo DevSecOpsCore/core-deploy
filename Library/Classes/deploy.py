@@ -15,6 +15,8 @@ class deployImageCluster:
         print(catKubeconfig)
         configControl = subprocess.check_output("cat /home/runner/.kube/config ", shell=True)
         print(configControl)
+        kubectlControl = subprocess.check_output("kubectl get nodes ", shell=True)
+        print(kubectlControl)
         print(parseDeployData.commandParameters)
 
 
