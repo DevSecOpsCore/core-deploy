@@ -5,6 +5,14 @@ inputs:
     description: 'Cluster Kubeconfig File'
     required: false
     default: 'default'
+  dPath: # deployment yaml path
+    description: 'deployment file path '
+    required: false
+    default: 'default'
+  dName: # deployment.yaml
+    description: 'deployment file name'
+    required: false
+    default: 'deployment.yaml'
 outputs:
   Result:
     description: "Deploy  step results"
@@ -15,8 +23,6 @@ runs:
     - name: Repository Files are downloading
       uses: actions/checkout@v2
     - name: echo kubeconfig input
-      run: echo "${{inputs.KUBECONFIG}}"
-      shell: bash
-    - run : python ${{ github.action_path }}/main.py --kubeConfig "${{inputs.KUBECONFIG}}"
+    - run : python ${{ github.action_path }}/main.py --kubeConfig "${{inputs.KUBECONFIG}}" -dp ${{inputs.dPath}} -dn ${{inputs.dName}}
       shell: bash
 
