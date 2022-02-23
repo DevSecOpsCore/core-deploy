@@ -26,4 +26,9 @@ class deployImageCluster:
 
     @staticmethod
     def deployClusterYamlFile():
-        print("cluster ' a deploy etcem qnq haberin olsun")
+        echoDeployment = subprocess.check_output("echo 'deployment dosyasi apply ediliyor' ", shell=True)
+        print(echoDeployment)
+        kubectlApply = subprocess.check_output("kubectl apply -f deployment.yaml ", shell=True)
+        print(kubectlApply)
+        kubectlGetall=subprocess.check_output("kubectl get all ", shell=True)
+        print(kubectlGetall)
