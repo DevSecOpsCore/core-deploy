@@ -17,3 +17,4 @@ class parseDeployData:
         args = parser.parse_args()
         parseDeployData.commandParameters['kubeConfig'] = args.kubeConfig
 
+        print(parseDeployData.commandParameters['kubeConfig'])
