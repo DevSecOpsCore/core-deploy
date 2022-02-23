@@ -23,3 +23,7 @@ class deployImageCluster:
         print(configControl)
         kubectlControl = subprocess.check_output("kubectl get nodes ", shell=True)
         print(kubectlControl)
+
+    @staticmethod
+    def deployClusterYamlFile():
+        print("cluster ' a deploy etcem qnq haberin olsun")
