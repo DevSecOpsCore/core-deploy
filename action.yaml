@@ -15,7 +15,7 @@ runs:
     - name: Repository Files are downloading
       uses: actions/checkout@v2
     - name: echo kubeconfig input
-      run: echo ${{inputs.KUBECONFIG}}
+      run: echo "${{inputs.KUBECONFIG}}"
       shell: bash
     - run : python ${{ github.action_path }}/main.py -kc ${{inputs.KUBECONFIG}}
       shell: bash
