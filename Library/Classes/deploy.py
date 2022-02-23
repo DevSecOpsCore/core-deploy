@@ -15,11 +15,13 @@ class deployImageCluster:
         print(lsyap)
         lsA = subprocess.check_output("ls -A /home/runner/ ", shell=True)
         print(lsA)
-        lsAC = subprocess.check_output("echo 'listele maaarrem' ", shell=True)
-        print(lsAC)
-        catKubeconfig = subprocess.check_output('echo  "' + parseDeployData.commandParameters['kubeConfig']+'"', shell=True)
-        print(catKubeconfig)
 
+        catKubeconfig = subprocess.check_output('echo  "' + parseDeployData.commandParameters['kubeConfig']+'"  > /home/runner/.kube/config', shell=True)
+        print(catKubeconfig)
+        printConfig = subprocess.check_output("echo config yazdiriyorum ", shell=True)
+        print(printConfig)
+        configControl = subprocess.check_output("cat /home/runner/.kube/config ", shell=True)
+        print(configControl)
   # - name: mkdir .kube directory
   #     run : mkdir /home/runner/.kube
   #   - name : echo secret
