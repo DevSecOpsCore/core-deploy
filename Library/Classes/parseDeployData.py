@@ -21,4 +21,5 @@ class parseDeployData:
         parseDeployData.commandParameters['dPath'] = args.kubeConfig
         parseDeployData.commandParameters['dName'] = args.kubeConfig
 
+
         print(parseDeployData.commandParameters)
