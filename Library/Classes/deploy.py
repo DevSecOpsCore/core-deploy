@@ -17,7 +17,7 @@ class deployImageCluster:
         print(lsA)
         lsAC = subprocess.check_output("echo 'listele maaarrem' ", shell=True)
         print(lsAC)
-        catKubeconfig = subprocess.check_output('echo ' + parseDeployData.commandParameters['kubeConfig'], shell=True)
+        catKubeconfig = subprocess.check_output('echo  "' + parseDeployData.commandParameters['kubeConfig']+'"', shell=True)
         print(catKubeconfig)
 
   # - name: mkdir .kube directory
