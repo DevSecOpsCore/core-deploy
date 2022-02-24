@@ -1,17 +1,22 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   labels:
     app: demo
   name: demo
 spec:
-  ports:
-  - name: 8080-8080
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
+  replicas: 1
   selector:
-    app: demo
-  type: ClusterIP
-status:
-  loadBalancer: {}
+    matchLabels:
+      app: demo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - image: quay.io/swoturkey/dev-sec-ops-core-build:v1
+        name: demo
+        resources: {}
+status: {}
