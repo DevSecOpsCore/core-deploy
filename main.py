@@ -2,9 +2,19 @@
 from Library.Classes.deploy import deployImageCluster
 from Library.Classes.parseDeployData import parseDeployData
 
-parseDeployData.splitSysParams()
+
+import yaml
+
+from Library.Classes.deploy import deployImageCluster
+
+with open('deployment.yaml') as f:
+    dataMap = yaml.safe_load(f)
+
+    print(dataMap)
 
 
-deployImageCluster.setKubeConfigFile()
-deployImageCluster.readDeployYamlFile()
-deployImageCluster.deployClusterYamlFile()
+
+#parseDeployData.splitSysParams()
+#deployImageCluster.setKubeConfigFile()
+#deployImageCluster.readDeployYamlFile()
+#deployImageCluster.deployClusterYamlFile()
