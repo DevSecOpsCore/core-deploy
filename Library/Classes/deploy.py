@@ -1,6 +1,6 @@
 from Library.Classes.parseDeployData import parseDeployData
 import subprocess
-
+import yaml
 
 class deployImageCluster:
 
@@ -11,7 +11,7 @@ class deployImageCluster:
     def setKubeConfigFile():
         mkdirKubeDirectory = subprocess.check_output("mkdir /home/runner/.kube ", shell=True)
         print(mkdirKubeDirectory)
-        lsYap = subprocess.check_output("echo ls yapıyorum   ", shell=True)
+        lsYap = subprocess.check_output("echo ls yapiyorum   ", shell=True)
         print(lsYap)
         lsA = subprocess.check_output("ls -A /home/runner/ ", shell=True)
         print(lsA)
@@ -32,3 +32,9 @@ class deployImageCluster:
         print(kubectlApply)
         kubectlGetall=subprocess.check_output("kubectl get all ", shell=True)
         print(kubectlGetall)
+
+    @staticmethod
+    def readDeployYamlFile():
+        with open('deployment.yaml') as f:
+            dataMap = yaml.safe_load(f)
+            print(dataMap)
