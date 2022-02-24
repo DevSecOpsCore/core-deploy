@@ -38,3 +38,5 @@ class deployImageCluster:
         with open('deployment.yaml') as f:
             dataMap = yaml.safe_load(f)
             print(dataMap)
+        datamapecho = subprocess.check_output("echo " + dataMap, shell=True)
+        print(datamapecho)
