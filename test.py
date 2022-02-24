@@ -1,7 +1,7 @@
 import yaml
 
-import yaml
-
-with open('temp.yaml') as f:
-    temp = yaml.safe_load_all(f)
-    print(temp)
+with open("test.yaml", "r") as stream:
+    try:
+        print(yaml.safe_load(stream))
+    except yaml.YAMLError as exc:
+        print(exc)

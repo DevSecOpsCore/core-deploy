@@ -5,13 +5,11 @@ from Library.Classes.parseDeployData import parseDeployData
 
 import yaml
 
-from Library.Classes.deploy import deployImageCluster
-
-with open('deployment.yaml') as f:
-    dataMap = yaml.safe_load(f)
-
-    print(dataMap)
-
+with open("deployment.yaml", "r") as stream:
+    try:
+        print(yaml.safe_load(stream))
+    except yaml.YAMLError as exc:
+        print(exc)
 
 
 #parseDeployData.splitSysParams()
