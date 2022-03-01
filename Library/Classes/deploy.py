@@ -1,6 +1,5 @@
 from Library.Classes.parseDeployData import parseDeployData
 import subprocess
-import yaml
 
 class deployImageCluster:
 
@@ -33,7 +32,3 @@ class deployImageCluster:
         kubectlGetall=subprocess.check_output("kubectl get all ", shell=True)
         print(kubectlGetall)
 
-    @staticmethod
-    def readDeployYamlFile():
-        with open('deployment.yaml') as f:
-            dataMap = yaml.safe_load(f)
